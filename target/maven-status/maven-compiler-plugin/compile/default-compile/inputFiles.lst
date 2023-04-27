@@ -16,7 +16,6 @@ C:\Users\Carlos\Desktop\Argentina Programa\ProyectoFinal\portfolio-BackEnd\src\m
 C:\Users\Carlos\Desktop\Argentina Programa\ProyectoFinal\portfolio-BackEnd\src\main\java\com\portfolio\cral\Dto\dtoPersona.java
 C:\Users\Carlos\Desktop\Argentina Programa\ProyectoFinal\portfolio-BackEnd\src\main\java\com\portfolio\cral\Controller\CEducacion.java
 C:\Users\Carlos\Desktop\Argentina Programa\ProyectoFinal\portfolio-BackEnd\src\main\java\com\portfolio\cral\Security\Dto\LoginUsuario.java
-C:\Users\Carlos\Desktop\Argentina Programa\ProyectoFinal\portfolio-BackEnd\src\main\java\com\portfolio\cral\Service\ImpPersonaService.java
 C:\Users\Carlos\Desktop\Argentina Programa\ProyectoFinal\portfolio-BackEnd\src\main\java\com\portfolio\cral\Entity\Persona.java
 C:\Users\Carlos\Desktop\Argentina Programa\ProyectoFinal\portfolio-BackEnd\src\main\java\com\portfolio\cral\Repository\RProyecto.java
 C:\Users\Carlos\Desktop\Argentina Programa\ProyectoFinal\portfolio-BackEnd\src\main\java\com\portfolio\cral\Security\Entity\Rol.java
@@ -36,11 +35,9 @@ C:\Users\Carlos\Desktop\Argentina Programa\ProyectoFinal\portfolio-BackEnd\src\m
 C:\Users\Carlos\Desktop\Argentina Programa\ProyectoFinal\portfolio-BackEnd\src\main\java\com\portfolio\cral\Repository\REducacion.java
 C:\Users\Carlos\Desktop\Argentina Programa\ProyectoFinal\portfolio-BackEnd\src\main\java\com\portfolio\cral\Entity\Hys.java
 C:\Users\Carlos\Desktop\Argentina Programa\ProyectoFinal\portfolio-BackEnd\src\main\java\com\portfolio\cral\Entity\Proyecto.java
-C:\Users\Carlos\Desktop\Argentina Programa\ProyectoFinal\portfolio-BackEnd\src\main\java\com\portfolio\cral\Interface\IPersonaService.java
 C:\Users\Carlos\Desktop\Argentina Programa\ProyectoFinal\portfolio-BackEnd\src\main\java\com\portfolio\cral\Repository\RHys.java
 C:\Users\Carlos\Desktop\Argentina Programa\ProyectoFinal\portfolio-BackEnd\src\main\java\com\portfolio\cral\CralApplication.java
 C:\Users\Carlos\Desktop\Argentina Programa\ProyectoFinal\portfolio-BackEnd\src\main\java\com\portfolio\cral\Security\Controller\Mensaje.java
-C:\Users\Carlos\Desktop\Argentina Programa\ProyectoFinal\portfolio-BackEnd\src\main\java\com\portfolio\cral\Repository\IPersonaRepository.java
 C:\Users\Carlos\Desktop\Argentina Programa\ProyectoFinal\portfolio-BackEnd\src\main\java\com\portfolio\cral\Controller\CProyecto.java
 C:\Users\Carlos\Desktop\Argentina Programa\ProyectoFinal\portfolio-BackEnd\src\main\java\com\portfolio\cral\Security\Dto\NuevoUsuario.java
 C:\Users\Carlos\Desktop\Argentina Programa\ProyectoFinal\portfolio-BackEnd\src\main\java\com\portfolio\cral\Security\Enums\RolNombre.java
