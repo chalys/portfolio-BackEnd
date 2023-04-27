@@ -3,11 +3,13 @@ package com.portfolio.cral.Dto;
 import javax.validation.constraints.NotBlank;
 
 public class dtoEducacion {
+
     @NotBlank
     private String nombreE;
     @NotBlank
     private String descripcionE;
 
+    //Constructor
     public dtoEducacion() {
     }
 
@@ -16,6 +18,7 @@ public class dtoEducacion {
         this.descripcionE = descripcionE;
     }
 
+    //Getters and Setters
     public String getNombreE() {
         return nombreE;
     }
@@ -31,6 +34,4 @@ public class dtoEducacion {
     public void setDescripcionE(String descripcionE) {
         this.descripcionE = descripcionE;
     }
-    
-    
 }
