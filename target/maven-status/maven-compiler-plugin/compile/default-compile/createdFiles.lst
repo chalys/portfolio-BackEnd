@@ -13,6 +13,7 @@ com\portfolio\cral\Dto\dtoPersona.class
 com\portfolio\cral\Controller\CHys.class
 com\portfolio\cral\Security\Service\RolService.class
 com\portfolio\cral\Controller\CExperiencia.class
+com\portfolio\cral\Service\ImpPersonaService.class
 com\portfolio\cral\Security\Enums\RolNombre.class
 com\portfolio\cral\Entity\Persona.class
 com\portfolio\cral\Security\Entity\Rol.class
@@ -23,6 +24,7 @@ com\portfolio\cral\Security\Service\UsuarioService.class
 com\portfolio\cral\Repository\RProyecto.class
 com\portfolio\cral\Security\Service\UserDetailsImpl.class
 com\portfolio\cral\Dto\dtoExperiencia.class
+com\portfolio\cral\Interface\IPersonaService.class
 com\portfolio\cral\Service\SEducacion.class
 com\portfolio\cral\Controller\CPersona.class
 com\portfolio\cral\Security\Repository\iRolRepository.class
@@ -32,6 +34,7 @@ com\portfolio\cral\Security\jwt\JwtEntryPoint.class
 com\portfolio\cral\Service\SExperiencia.class
 com\portfolio\cral\Service\SProyecto.class
 com\portfolio\cral\Entity\Educacion.class
+com\portfolio\cral\Repository\IPersonaRepository.class
 com\portfolio\cral\Service\SHys.class
 com\portfolio\cral\Dto\dtoEducacion.class
 com\portfolio\cral\Repository\RExperiencia.class
