@@ -13,6 +13,8 @@ public class dtoPersona {
     @NotBlank
     private String apellido;
     @NotBlank
+    private String profesion;
+    @NotBlank
     private String descripcion;
     @NotBlank
     private String img;
@@ -21,14 +23,15 @@ public class dtoPersona {
     public dtoPersona() {
     }
 
-    public dtoPersona(String nombre, String apellido, String descripcion, String img) {
+    public dtoPersona(String nombre, String apellido, String profesion, String descripcion, String img) {
         this.nombre = nombre;
         this.apellido = apellido;
+        this.profesion = profesion;
         this.descripcion = descripcion;
         this.img = img;
     }
 
-    //Getters and Setters
+    //________________________Setters && Getters________________________
     public String getNombre() {
         return nombre;
     }
@@ -45,6 +48,14 @@ public class dtoPersona {
         this.apellido = apellido;
     }
 
+    public String getProfesion() {
+        return profesion;
+    }
+
+    public void setProfesion(String profesion) {
+        this.profesion = profesion;
+    }
+   
     public String getDescripcion() {
         return descripcion;
     }
@@ -62,6 +73,6 @@ public class dtoPersona {
     }
 
     public CharSequence getNombreP() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }

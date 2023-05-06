@@ -18,8 +18,7 @@ public class Experiencia {
     private String nombreE;
     private String descripcionE;    
     
-    //Constructor
-
+    //___________________________Constructores___________________________
     public Experiencia() {
         
     }
@@ -30,8 +29,7 @@ public class Experiencia {
         this.descripcionE = descripcionE;
     }
     
-    //Gettes & Setters
-
+    //________________________Setters && Getters________________________
     public int getId() {
         return id;
     }

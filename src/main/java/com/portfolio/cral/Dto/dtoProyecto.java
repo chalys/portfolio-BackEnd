@@ -33,7 +33,7 @@ public class dtoProyecto {
         this.imgP = imgP;
     }
 
-    //Getters and Setters
+    //________________________Setters && Getters________________________
     public String getNombreP() {
         return nombreP;
     }

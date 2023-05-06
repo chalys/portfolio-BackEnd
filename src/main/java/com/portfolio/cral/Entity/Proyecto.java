@@ -21,7 +21,7 @@ public class Proyecto {
     private String linkP;
     private String imgP;
 
-    //constructor
+    //___________________________Constructores___________________________
     public Proyecto() {
     }
 
@@ -33,7 +33,7 @@ public class Proyecto {
         this.imgP = imgP;
     }
 
-    //Getters and Setters
+    //________________________Setters && Getters________________________
     public int getId() {
         return id;
     }

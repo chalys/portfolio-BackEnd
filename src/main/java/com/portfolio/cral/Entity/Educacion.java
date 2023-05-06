@@ -14,7 +14,7 @@ public class Educacion {
     private String nombreE;
     private String descripcionE;
 
-    //Constructor
+    //___________________________Constructores___________________________
     public Educacion() {
     }
 
@@ -23,7 +23,7 @@ public class Educacion {
         this.descripcionE = descripcionE;
     }
 
-    //Getters and Setters
+    //________________________Setters && Getters________________________
     public int getId() {
         return id;
     }

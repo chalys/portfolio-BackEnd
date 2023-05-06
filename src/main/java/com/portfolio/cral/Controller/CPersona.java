@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/personas")
-@CrossOrigin(origins = {"https://frontendcral.web.app"})
+@CrossOrigin(origins = {"https://frontendcral.web.app","http://localhost:4200"})
 
 public class CPersona {
 
@@ -57,7 +57,7 @@ public class CPersona {
         }
 
         Persona persona = new Persona(
-                dtopersona.getNombre(), dtopersona.getApellido(), dtopersona.getDescripcion(),dtopersona.getImg()
+                dtopersona.getNombre(), dtopersona.getApellido(), dtopersona.getProfesion() , dtopersona.getDescripcion(),dtopersona.getImg()
         );
         sPersona.save(persona);
         return new ResponseEntity(new Mensaje("Persona creada"), HttpStatus.OK);
@@ -80,6 +80,7 @@ public class CPersona {
 
         persona.setNombre(dtopersona.getNombre());
         persona.setApellido(dtopersona.getApellido());
+        persona.setProfesion(dtopersona.getProfesion());
         persona.setDescripcion(dtopersona.getDescripcion());
         persona.setImg(dtopersona.getImg());
 

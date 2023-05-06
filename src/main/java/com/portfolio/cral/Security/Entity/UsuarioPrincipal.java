@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.portfolio.cral.Security.Entity;
 
 import java.util.Collection;
@@ -37,7 +33,7 @@ public class UsuarioPrincipal implements UserDetails {
                 .map(rol -> new SimpleGrantedAuthority(rol.getRolNombre().name())).collect(Collectors
                 .toList());
         return new UsuarioPrincipal(usuario.getNombre(), usuario.getNombreUsuario(), usuario.getEmail(),
-                 usuario.getPassword(), authorities);
+                usuario.getPassword(), authorities);
     }
 
     @Override

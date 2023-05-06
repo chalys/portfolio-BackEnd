@@ -26,21 +26,29 @@ public class Persona {
     @Size(min = 1, max = 50, message = "no cumple con la longitud")
     private String apellido;
     
+    @Size(min = 0, max = 50, message = "La longitud de la profesion no es valida")
+    private String profesion;
+        
     @NotNull
+    @Size(min = 0, max = 200, message = "La longitud de la descripcion no es valida")
     private String descripcion;
     
+    @Size(min = 0, max = 260, message = "La longitud del link de perfil no es valida")
     private String img;
 
+    //___________________________Constructores___________________________
     public Persona() {
     }
 
-    public Persona(String nombre, String apellido, String descripcion, String img) {
+    public Persona(String nombre, String apellido, String profesion, String descripcion, String img) {
         this.nombre = nombre;
         this.apellido = apellido;
+        this.profesion = profesion;
         this.descripcion = descripcion;
         this.img = img;
     }
 
+    //________________________Setters && Getters________________________
     public int getId() {
         return id;
     }
@@ -65,6 +73,14 @@ public class Persona {
         this.apellido = apellido;
     }
 
+    public String getProfesion() {
+        return profesion;
+    }
+
+    public void setProfesion(String profesion) {
+        this.profesion = profesion;
+    }
+
     public String getDescripcion() {
         return descripcion;
     }
@@ -79,5 +95,5 @@ public class Persona {
 
     public void setImg(String img) {
         this.img = img;
-    }     
+    }
 }

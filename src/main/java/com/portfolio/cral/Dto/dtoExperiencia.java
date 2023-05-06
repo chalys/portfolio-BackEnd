@@ -13,7 +13,7 @@ public class dtoExperiencia {
     @NotBlank
     private String descripcionE;
 
-    //Constructores
+    //___________________________Constructores___________________________
     public dtoExperiencia() {
     }
 

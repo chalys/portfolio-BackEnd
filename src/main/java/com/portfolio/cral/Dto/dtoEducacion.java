@@ -9,7 +9,7 @@ public class dtoEducacion {
     @NotBlank
     private String descripcionE;
 
-    //Constructor
+    //___________________________Constructores___________________________
     public dtoEducacion() {
     }
 

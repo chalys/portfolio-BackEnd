@@ -17,6 +17,7 @@ public class Hys {
     private String nombre;
     private int porcentaje;
 
+    //___________________________Constructores___________________________
     public Hys() {
     }
 
@@ -24,7 +25,8 @@ public class Hys {
         this.nombre = nombre;
         this.porcentaje = porcentaje;
     }
-
+    
+    //________________________Setters && Getters________________________
     public int getId() {
         return id;
     }
