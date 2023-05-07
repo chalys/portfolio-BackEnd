@@ -19,20 +19,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- *
- * @author Carlos
- */
 @RestController
 @RequestMapping("/proyecto")
-@CrossOrigin(origins = {"https://frontendcral.web.app"})
-/*MOdificar la URL del Front*/
+@CrossOrigin(origins = {"https://frontendcral.web.app","http://localhost:4200"}, allowedHeaders = "*", exposedHeaders = "*")
+
 public class CProyecto {
 
     @Autowired
     SProyecto sProyecto;
 
-    @GetMapping("/lista")
+    @GetMapping("/list")
     public ResponseEntity<List<Proyecto>> list() {
         List<Proyecto> list = sProyecto.list();
         return new ResponseEntity(list, HttpStatus.OK);
@@ -57,38 +53,40 @@ public class CProyecto {
         return new ResponseEntity(new Mensaje("Proyecto eliminado"), HttpStatus.OK);
     }
 
-    @PostMapping("/create")
-    public ResponseEntity<?> create(@RequestBody dtoProyecto dtoproyecto) {
-        if (StringUtils.isBlank(dtoproyecto.getNombreP())) {
+    @PostMapping("/new")
+    public ResponseEntity<?> create(@RequestBody dtoProyecto dtoproy) {
+        if (StringUtils.isBlank(dtoproy.getNombreP())) {
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
-        if (sProyecto.existsByNombreP(dtoproyecto.getNombreP())) {
+        if (sProyecto.existsByNombreP(dtoproy.getNombreP())) {
             return new ResponseEntity(new Mensaje("Ese nombre ya existe"), HttpStatus.BAD_REQUEST);
         }
-        Proyecto proyecto = new Proyecto(dtoproyecto.getNombreP(), dtoproyecto.getFechaP(), dtoproyecto.getDescripcionP(), dtoproyecto.getLinkP(), dtoproyecto.getImgP());
+        Proyecto proyecto = new Proyecto(dtoproy.getNombreP(), dtoproy.getDescripcion(), dtoproy.getFecha_inicio(), dtoproy.getFecha_fin(), dtoproy.getUrl_proyecto(), dtoproy.getFoto_proyecto_url());
         sProyecto.save(proyecto);
-        return new ResponseEntity(new Mensaje("Proyecto creada"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Proyecto agregado"), HttpStatus.OK);
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoProyecto dtoproyecto) {
+    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoProyecto dtoproy) {
         if (!sProyecto.existsById(id)) {
             return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.NOT_FOUND);
         }
-        if (sProyecto.existsByNombreP(dtoproyecto.getNombreP()) && sProyecto.getByNombreP(dtoproyecto.getNombreP()).get().getId() != id) {
+        if (sProyecto.existsByNombreP(dtoproy.getNombreP()) && sProyecto.getByNombreP(dtoproy.getNombreP()).get().getIdproyecto() != id) {
             return new ResponseEntity(new Mensaje("Ese nombre ya existe"), HttpStatus.BAD_REQUEST);
         }
-        if (StringUtils.isBlank(dtoproyecto.getNombreP())) {
+        if (StringUtils.isBlank(dtoproy.getNombreP())) {
             return new ResponseEntity(new Mensaje("El campo no puede estar vacio"), HttpStatus.BAD_REQUEST);
         }
 
         Proyecto proyecto = sProyecto.getOne(id).get();
-        proyecto.setNombreP(dtoproyecto.getNombreP());
-        proyecto.setFechaP(dtoproyecto.getFechaP());
-        proyecto.setDescripcionP(dtoproyecto.getDescripcionP());
-        proyecto.setLinkP(dtoproyecto.getLinkP());
-        proyecto.setImgP(dtoproyecto.getImgP());
+
+        proyecto.setNombreP(dtoproy.getNombreP());
+        proyecto.setDescripcion(dtoproy.getDescripcion());
+        proyecto.setFecha_inicio(dtoproy.getFecha_inicio());
+        proyecto.setFecha_fin(dtoproy.getFecha_fin());
+        proyecto.setUrl_proyecto(dtoproy.getUrl_proyecto());
+        proyecto.setFoto_proyecto_url(dtoproy.getFoto_proyecto_url());
         sProyecto.save(proyecto);
-        return new ResponseEntity(new Mensaje("Proyecto actualizada"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Proyecto actualizado"), HttpStatus.OK);
     }
 }

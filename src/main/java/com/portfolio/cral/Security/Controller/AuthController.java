@@ -28,13 +28,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- *
- * @author Carlos
- */
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins = {"https://frontendcral.web.app"})
+@CrossOrigin(origins = {"https://frontendcral.web.app", "http://localhost:4200"}, allowedHeaders = "*", exposedHeaders = "*")
 
 public class AuthController {
 

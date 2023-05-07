@@ -1,28 +1,31 @@
 package com.portfolio.cral.Dto;
 
+import java.time.LocalDate;
 import javax.validation.constraints.NotBlank;
 
-/**
- *
- * @author Carlos
- */
 public class dtoExperiencia {
 
     @NotBlank
     private String nombreE;
     @NotBlank
-    private String descripcionE;
+    private LocalDate fecha_inicio;
+    @NotBlank
+    private LocalDate fecha_fin;
+    @NotBlank
+    private String descripcion;
 
     //___________________________Constructores___________________________
     public dtoExperiencia() {
     }
 
-    public dtoExperiencia(String nombreE, String descripcionE) {
+    public dtoExperiencia(String nombreE, LocalDate fecha_inicio, LocalDate fecha_fin, String descripcion) {
         this.nombreE = nombreE;
-        this.descripcionE = descripcionE;
+        this.fecha_inicio = fecha_inicio;
+        this.fecha_fin = fecha_fin;
+        this.descripcion = descripcion;
     }
 
-    //Getters & Setters
+    //________________________Setters && Getters________________________
     public String getNombreE() {
         return nombreE;
     }
@@ -31,11 +34,28 @@ public class dtoExperiencia {
         this.nombreE = nombreE;
     }
 
-    public String getDescripcionE() {
-        return descripcionE;
+    public LocalDate getFecha_inicio() {
+        return fecha_inicio;
     }
 
-    public void setDescripcionE(String descripcionE) {
-        this.descripcionE = descripcionE;
+    public void setFecha_inicio(LocalDate fecha_inicio) {
+        this.fecha_inicio = fecha_inicio;
     }
+
+    public LocalDate getFecha_fin() {
+        return fecha_fin;
+    }
+
+    public void setFecha_fin(LocalDate fecha_fin) {
+        this.fecha_fin = fecha_fin;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
 }

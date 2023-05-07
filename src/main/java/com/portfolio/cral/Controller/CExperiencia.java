@@ -19,20 +19,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- *
- * @author Carlos
- */
 @RestController
 @RequestMapping("/explab")
-@CrossOrigin(origins = {"https://frontendcral.web.app"})
-/*MOdificar la URL del Front*/
+@CrossOrigin(origins = {"https://frontendcral.web.app","http://localhost:4200"}, allowedHeaders = "*", exposedHeaders = "*")
+
 public class CExperiencia {
 
     @Autowired
     SExperiencia sExperiencia;
 
-    @GetMapping("/lista")
+    @GetMapping("/list")
     public ResponseEntity<List<Experiencia>> list() {
         List<Experiencia> list = sExperiencia.list();
         return new ResponseEntity(list, HttpStatus.OK);
@@ -55,22 +51,22 @@ public class CExperiencia {
             return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.NOT_FOUND);
         }
         sExperiencia.delete(id);
-        return new ResponseEntity(new Mensaje("Experiencia eliminada"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Experiencia laboral eliminada"), HttpStatus.OK);
     }
 
-    @PostMapping("/create")
+    @PostMapping("/new")
     public ResponseEntity<?> create(@RequestBody dtoExperiencia dtoexp) {
         if (StringUtils.isBlank(dtoexp.getNombreE())) {
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
         if (sExperiencia.existsByNombreE(dtoexp.getNombreE())) {
-            return new ResponseEntity(new Mensaje("Esa experiencia existe"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("Esa experiencia laboral existe"), HttpStatus.BAD_REQUEST);
         }
 
-        Experiencia experiencia = new Experiencia(dtoexp.getNombreE(), dtoexp.getDescripcionE());
+        Experiencia experiencia = new Experiencia(dtoexp.getNombreE(), dtoexp.getFecha_inicio(), dtoexp.getFecha_fin(), dtoexp.getDescripcion());
         sExperiencia.save(experiencia);
 
-        return new ResponseEntity(new Mensaje("Experiencia agregada"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Experiencia laboral agregada"), HttpStatus.OK);
     }
 
     @PutMapping("/update/{id}")
@@ -80,8 +76,8 @@ public class CExperiencia {
             return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.BAD_REQUEST);
         }
         //Compara nombre de experiencias
-        if (sExperiencia.existsByNombreE(dtoexp.getNombreE()) && sExperiencia.getByNombreE(dtoexp.getNombreE()).get().getId() != id) {
-            return new ResponseEntity(new Mensaje("Esa experiencia ya existe"), HttpStatus.BAD_REQUEST);
+        if (sExperiencia.existsByNombreE(dtoexp.getNombreE()) && sExperiencia.getByNombreE(dtoexp.getNombreE()).get().getIdexperiencia() != id) {
+            return new ResponseEntity(new Mensaje("Esa experiencia laboral ya existe"), HttpStatus.BAD_REQUEST);
         }
         //No puede estar vacio
         if (StringUtils.isBlank(dtoexp.getNombreE())) {
@@ -90,10 +86,11 @@ public class CExperiencia {
 
         Experiencia experiencia = sExperiencia.getOne(id).get();
         experiencia.setNombreE(dtoexp.getNombreE());
-        experiencia.setDescripcionE((dtoexp.getDescripcionE()));
+        experiencia.setFecha_inicio(dtoexp.getFecha_inicio());
+        experiencia.setFecha_fin(dtoexp.getFecha_fin());
+        experiencia.setDescripcion(dtoexp.getDescripcion());
 
         sExperiencia.save(experiencia);
-        return new ResponseEntity(new Mensaje("Experiencia actualizada"), HttpStatus.OK);
-
+        return new ResponseEntity(new Mensaje("Experiencia laboral actualizada"), HttpStatus.OK);
     }
 }
