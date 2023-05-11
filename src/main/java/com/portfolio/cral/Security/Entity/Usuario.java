@@ -13,10 +13,6 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
 
-/**
- *
- * @author Carlos
- */
 @Entity
 public class Usuario {
     @Id

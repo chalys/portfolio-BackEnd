@@ -3,10 +3,6 @@ package com.portfolio.cral.Security.Dto;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- *
- * @author Carlos
- */
 public class NuevoUsuario {
     private String nombre;
     private String nombreUsuario;

@@ -1,6 +1,5 @@
 com\portfolio\cral\Repository\RPersona.class
 com\portfolio\cral\CralApplication.class
-com\portfolio\cral\Repository\RHys.class
 com\portfolio\cral\Security\Controller\AuthController.class
 com\portfolio\cral\Entity\Proyecto.class
 com\portfolio\cral\Security\Controller\Mensaje.class
@@ -10,7 +9,6 @@ com\portfolio\cral\Security\Entity\Usuario.class
 com\portfolio\cral\Controller\CProyecto.class
 com\portfolio\cral\Repository\REducacion.class
 com\portfolio\cral\Dto\dtoPersona.class
-com\portfolio\cral\Controller\CHys.class
 com\portfolio\cral\Security\Service\RolService.class
 com\portfolio\cral\Controller\CExperiencia.class
 com\portfolio\cral\Security\Enums\RolNombre.class
@@ -22,6 +20,7 @@ com\portfolio\cral\Security\Repository\iUsuarioRepository.class
 com\portfolio\cral\Security\Service\UsuarioService.class
 com\portfolio\cral\Repository\RProyecto.class
 com\portfolio\cral\Security\Service\UserDetailsImpl.class
+com\portfolio\cral\Entity\HardSkills.class
 com\portfolio\cral\Dto\dtoExperiencia.class
 com\portfolio\cral\Service\SEducacion.class
 com\portfolio\cral\Controller\CPersona.class
@@ -32,13 +31,14 @@ com\portfolio\cral\Security\jwt\JwtEntryPoint.class
 com\portfolio\cral\Service\SExperiencia.class
 com\portfolio\cral\Service\SProyecto.class
 com\portfolio\cral\Entity\Educacion.class
-com\portfolio\cral\Service\SHys.class
 com\portfolio\cral\Dto\dtoEducacion.class
 com\portfolio\cral\Repository\RExperiencia.class
-com\portfolio\cral\Entity\Hys.class
+com\portfolio\cral\Repository\RHardSkills.class
 com\portfolio\cral\Security\jwt\JwtTokenFilter.class
-com\portfolio\cral\Dto\dtoHys.class
+com\portfolio\cral\Dto\dtoHardSkills.class
+com\portfolio\cral\Controller\CHardSkills.class
 com\portfolio\cral\Entity\Experiencia.class
 com\portfolio\cral\Service\SPersona.class
 com\portfolio\cral\Security\Dto\LoginUsuario.class
 com\portfolio\cral\Dto\dtoProyecto.class
+com\portfolio\cral\Service\SHardSkills.class
