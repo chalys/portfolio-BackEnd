@@ -14,26 +14,35 @@ public class Experiencia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idexperiencia;
+
     @NotNull
     @Size(min = 1, max = 90, message = "La longitud del nombre de la experiencia laboral no es valida")
     private String nombreE;
+
+    @NotNull
     private LocalDate fecha_inicio;
+
     private LocalDate fecha_fin;
+
     @Size(min = 0, max = 200, message = "La longitud de la descripcion no es valida")
     private String descripcion;
+
+    @Size(min = 0, max = 260, message = "La longitud del link del logo no es valida")
+    private String logo_experiencia_url;
 
     //___________________________Constructores___________________________
     public Experiencia() {
 
     }
 
-    public Experiencia(String nombreE, LocalDate fecha_inicio, LocalDate fecha_fin, String descripcion) {
+    public Experiencia(String nombreE, LocalDate fecha_inicio, LocalDate fecha_fin, String descripcion, String logo_experiencia_url) {
         this.nombreE = nombreE;
         this.fecha_inicio = fecha_inicio;
         this.fecha_fin = fecha_fin;
         this.descripcion = descripcion;
+        this.logo_experiencia_url = logo_experiencia_url;
     }
-
+    
     //________________________Setters && Getters________________________
     public int getIdexperiencia() {
         return idexperiencia;
@@ -75,4 +84,11 @@ public class Experiencia {
         this.descripcion = descripcion;
     }
 
+    public String getLogo_experiencia_url() {
+        return logo_experiencia_url;
+    }
+
+    public void setLogo_experiencia_url(String logo_experiencia_url) {
+        this.logo_experiencia_url = logo_experiencia_url;
+    }
 }

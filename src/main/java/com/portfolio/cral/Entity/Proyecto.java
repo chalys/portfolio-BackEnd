@@ -21,7 +21,8 @@ public class Proyecto {
 
     @Size(min = 0, max = 200, message = "La longitud de la descripcion no es valida")
     private String descripcion;
-
+    
+    @NotNull
     private LocalDate fecha_inicio;
 
     private LocalDate fecha_fin;

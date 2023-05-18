@@ -13,16 +13,19 @@ public class dtoExperiencia {
     private LocalDate fecha_fin;
     @NotBlank
     private String descripcion;
+    
+    private String logo_experiencia_url;
 
     //___________________________Constructores___________________________
     public dtoExperiencia() {
     }
 
-    public dtoExperiencia(String nombreE, LocalDate fecha_inicio, LocalDate fecha_fin, String descripcion) {
+    public dtoExperiencia(String nombreE, LocalDate fecha_inicio, LocalDate fecha_fin, String descripcion, String logo_experiencia_url) {
         this.nombreE = nombreE;
         this.fecha_inicio = fecha_inicio;
         this.fecha_fin = fecha_fin;
         this.descripcion = descripcion;
+        this.logo_experiencia_url = logo_experiencia_url;
     }
 
     //________________________Setters && Getters________________________
@@ -58,4 +61,11 @@ public class dtoExperiencia {
         this.descripcion = descripcion;
     }
 
+    public String getLogo_experiencia_url() {
+        return logo_experiencia_url;
+    }
+
+    public void setLogo_experiencia_url(String logo_experiencia_url) {
+        this.logo_experiencia_url = logo_experiencia_url;
+    }
 }

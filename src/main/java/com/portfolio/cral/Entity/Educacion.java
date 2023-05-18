@@ -18,7 +18,8 @@ public class Educacion {
     @NotNull
     @Size(min = 1, max = 90, message = "La longitud del nombre de la institucion no es valida")
     private String nombreE;
-
+    
+    @NotNull
     private LocalDate fecha_inicio;
 
     private LocalDate fecha_fin;
@@ -26,7 +27,7 @@ public class Educacion {
     @Size(min = 0, max = 200, message = "La longitud de la descripcion no es valida")
     private String descripcion;
 
-    @Size(min = 0, max = 260, message = "La longitud del link de perfil no es valida")
+    @Size(min = 0, max = 260, message = "La longitud del link de logo no es valida")
     private String logo_institucion_url;
 
     //___________________________Constructores___________________________

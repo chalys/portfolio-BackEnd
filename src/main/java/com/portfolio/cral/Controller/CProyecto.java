@@ -86,6 +86,7 @@ public class CProyecto {
         proyecto.setFecha_fin(dtoproy.getFecha_fin());
         proyecto.setUrl_proyecto(dtoproy.getUrl_proyecto());
         proyecto.setFoto_proyecto_url(dtoproy.getFoto_proyecto_url());
+        
         sProyecto.save(proyecto);
         return new ResponseEntity(new Mensaje("Proyecto actualizado"), HttpStatus.OK);
     }

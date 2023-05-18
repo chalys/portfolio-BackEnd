@@ -63,7 +63,7 @@ public class CExperiencia {
             return new ResponseEntity(new Mensaje("Esa experiencia laboral existe"), HttpStatus.BAD_REQUEST);
         }
 
-        Experiencia experiencia = new Experiencia(dtoexp.getNombreE(), dtoexp.getFecha_inicio(), dtoexp.getFecha_fin(), dtoexp.getDescripcion());
+        Experiencia experiencia = new Experiencia(dtoexp.getNombreE(), dtoexp.getFecha_inicio(), dtoexp.getFecha_fin(), dtoexp.getDescripcion(), dtoexp.getLogo_experiencia_url());
         sExperiencia.save(experiencia);
 
         return new ResponseEntity(new Mensaje("Experiencia laboral agregada"), HttpStatus.OK);
@@ -89,6 +89,7 @@ public class CExperiencia {
         experiencia.setFecha_inicio(dtoexp.getFecha_inicio());
         experiencia.setFecha_fin(dtoexp.getFecha_fin());
         experiencia.setDescripcion(dtoexp.getDescripcion());
+        experiencia.setLogo_experiencia_url(dtoexp.getLogo_experiencia_url());
 
         sExperiencia.save(experiencia);
         return new ResponseEntity(new Mensaje("Experiencia laboral actualizada"), HttpStatus.OK);
